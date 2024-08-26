@@ -13,20 +13,6 @@ html, body {
     color: #e0e0e0; /* Light text color for readability */
 }
 
-/* Style the drop area */
-#dropArea {
-    border: 2px dashed #555; /* Darker dashed border */
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    cursor: pointer;
-    background-color: #1e1e1e; /* Dark background for the drop area */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Deeper shadow for a more pronounced effect */
-    margin-bottom: 20px; /* Space below the drop area */
-}
-
 /* Style the container div for media */
 #displaydiv {
     border: 1px solid #444; /* Dark border color */

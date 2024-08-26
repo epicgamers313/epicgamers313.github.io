@@ -7,13 +7,40 @@ const nextButton = document.getElementById('nextbutton');
 let files = [];
 let currentIndex = 0;
 
-// Handle folder selection
+// Detect the platform (desktop or mobile)
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+// Configure file input based on platform
+function configureFileInput() {
+    if (isMobileDevice()) {
+        // Mobile devices: multiple file selection only
+        fileInput.removeAttribute('webkitdirectory');
+        fileInput.removeAttribute('mozdirectory');
+        fileInput.removeAttribute('msdirectory');
+        fileInput.removeAttribute('odirectory');
+        fileInput.setAttribute('multiple', 'multiple');
+    } else {
+        // Desktop devices: folder selection
+        fileInput.setAttribute('webkitdirectory', 'webkitdirectory');
+        fileInput.setAttribute('mozdirectory', 'mozdirectory');
+        fileInput.setAttribute('msdirectory', 'msdirectory');
+        fileInput.setAttribute('odirectory', 'odirectory');
+        fileInput.removeAttribute('multiple');
+    }
+}
+
+// Call configureFileInput on page load
+configureFileInput();
+
+// Handle folder or file selection
 document.getElementById('openbutton').addEventListener('click', function() {
     fileInput.click(); // Trigger file input click
 });
 
 fileInput.addEventListener('change', function(event) {
-    files = Array.from(event.target.files); // Get files from the folder
+    files = Array.from(event.target.files); // Get all selected files
     if (files.length > 0) {
         currentIndex = 0; // Reset index
         displayMedia(files[currentIndex]); // Display the first file
