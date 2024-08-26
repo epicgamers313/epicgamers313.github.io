@@ -11,9 +11,6 @@
     <!-- Input for selecting a folder -->
     <input type="file" id="fileInput" webkitdirectory mozdirectory msdirectory odirectory directory style="display: none;">
 
-    <!-- Button to trigger folder selection -->
-    <button id="openbutton">Open Folder</button>
-
     <!-- Container div for the media, centered within the viewport -->
     <div id="displaydiv">
         <!-- Image element to display the selected image -->
@@ -22,9 +19,11 @@
         <video id="displayvideo" controls></video>
     </div>
 
-    <div>
-        <!-- Navigation buttons -->
+    <!-- Container for buttons at the bottom -->
+    <div id="buttonContainer">
+        <!-- Navigation buttons and open folder button -->
         <button id="backbutton">Back</button>
+        <button id="openbutton">Open Folder</button>
         <button id="nextbutton">Next</button>
     </div>
 

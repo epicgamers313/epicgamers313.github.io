@@ -1,34 +1,28 @@
-/* Ensure the body and HTML occupy the full height and center content */
+/* Ensure the body and HTML occupy the full height and prevent scrolling */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Arial', sans-serif;
+    width: 100%;
+    overflow: hidden; /* Prevent scrolling */
     background-color: #121212; /* Dark background for the entire page */
     color: #e0e0e0; /* Light text color for readability */
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
 }
 
-/* Style the container div for media */
+/* Container for media content */
 #displaydiv {
-    border: 1px solid #444; /* Dark border color */
-    width: 70%;
-    height: 70%;
+    flex: 1; /* Take up all available space */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     box-sizing: border-box;
     background-color: #1e1e1e; /* Dark background for the display area */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Deeper shadow for a more pronounced effect */
 }
 
-/* Style the image to maintain aspect ratio */
+/* Style the image to maintain aspect ratio and fit within the container */
 #displayip {
     max-width: 100%;
     max-height: 100%;
@@ -36,11 +30,22 @@ html, body {
     display: none; /* Hide initially */
 }
 
-/* Style the video */
+/* Style the video to maintain aspect ratio and fit within the container */
 #displayvideo {
     max-width: 100%;
     max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
     display: none; /* Hide initially */
+}
+
+/* Container for buttons */
+#buttonContainer {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    padding: 10px 0; /* Vertical padding for spacing */
+    background-color: #1e1e1e; /* Dark background for the button area */
+    border-top: 1px solid #444; /* Top border to separate from media content */
 }
 
 /* Style the buttons */
@@ -52,7 +57,6 @@ button {
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    margin: 10px;
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
 }
 
