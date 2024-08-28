@@ -41,11 +41,31 @@ html, body {
 /* Container for buttons */
 #buttonContainer {
     display: flex;
-    justify-content: center; /* Center buttons horizontally */
-    gap: 20px; /* Space between buttons */
-    padding: 10px 0; /* Vertical padding for spacing */
+    justify-content: space-between; /* Spread out the button groups */
+    align-items: center;
+    padding: 10px 20px; /* Padding for spacing */
     background-color: #1e1e1e; /* Dark background for the button area */
     border-top: 1px solid #444; /* Top border to separate from media content */
+}
+
+/* Group for center buttons */
+.centerButtons {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 20px; /* Space between buttons */
+}
+
+/* Group for left buttons */
+.leftButtons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Group for right buttons */
+.rightButtons {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* Style the buttons */
